@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة ويبهوك Discord</title>
+    <style>
+        /* ضبط الخلفية لتكون بحجم الموقع */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: url('https://media.discordapp.net/attachments/1324425941182582846/1324511275878842439/11-13-1_copie.png?ex=679b5a80&is=679a0900&hm=38f6c93b0195ad85fb22a4ad361656b566af2db3c9f01e92cd546f1c99ba0f74&=&format=webp&quality=lossless&width=841&height=473') no-repeat center center fixed;
+            background-size: cover; /* تأكد أن الصورة تغطي كامل الشاشة */
+            color: white;
+            margin: 0;
+            padding: 0;
+            height: 100vh; /* جعل الخلفية تأخذ ارتفاع الشاشة بالكامل */
+            width: 100vw;  /* جعل الخلفية تأخذ عرض الشاشة بالكامل */
+            overflow: hidden; /* إخفاء أي تجاوز */
+        }
+        .container {
+            margin-top: 50px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        input, select {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .delete-btn { background-color: red; color: white; }
+        .spam-btn { background-color: blue; color: white; }
+        .send-btn { background-color: green; color: white; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>إدارة ويبهوك Discord</h1>
+        
+        <input type="text" id="webhook-url" placeholder="🔗 أدخل رابط الويبهوك">
+        <br>
+        <input type="text" id="message" placeholder="✉ أدخل الرسالة">
+        <br>
+        <label for="message-count">🔢 اختر عدد الرسائل:</label>
+        <select id="message-count">
+            <option value="1">1</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+            <option value="500">500</option>
+            <option value="1000">1000</option>
+        </select>
+        <br>
+        
+        <button class="delete-btn" onclick="deleteWebhook()">🗑 حذف الويبهوك</button>
+        <button class="spam-btn" onclick="spamWebhook()">📢 إرسال Spam</button>
+        <button class="send-btn" onclick="sendMessage()">✉ إرسال رسالة</button>
+    </div>
+
+</body>
+</html>
